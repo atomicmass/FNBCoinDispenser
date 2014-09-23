@@ -29,8 +29,8 @@ public class CoinDispenserResource {
     ));
 
     @POST
-    @Produces("application/json")
-    @Consumes("application/json")
+    @Produces("application/xml")
+    @Consumes("application/xml")
     public DispenseCalculation calculate(DispenseCalculation calc) {
         if (calc.getAmountDue().compareTo(calc.getNoteReceived()) > 0) {
             calc.setMessage("Insufficient amount received.");
@@ -57,7 +57,7 @@ public class CoinDispenserResource {
     }
 
     @GET
-    @Produces("application/json")
+    @Produces("application/xml")
     @Path("/example/")
     public DispenseCalculation getExample() {
         DispenseCalculation c = new DispenseCalculation();

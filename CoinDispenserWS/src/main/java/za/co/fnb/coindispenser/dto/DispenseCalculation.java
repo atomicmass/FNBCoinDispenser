@@ -3,7 +3,9 @@ package za.co.fnb.coindispenser.dto;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 public class DispenseCalculation implements Serializable {
     private BigDecimal amountDue;
     private BigDecimal noteReceived;

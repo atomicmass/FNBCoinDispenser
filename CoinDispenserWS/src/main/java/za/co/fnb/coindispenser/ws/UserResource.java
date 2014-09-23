@@ -1,24 +1,22 @@
 package za.co.fnb.coindispenser.ws;
 
 import javax.ejb.Stateless;
-import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
-import za.co.fnb.coindispenser.dto.User;
+import za.co.fnb.coindispenser.dto.LoginResult;
 
 @Stateless
 @Path("/user/")
 public class UserResource {
-    @Path("login")
-    @POST
-    @Consumes("application/json")
-    @Produces("application/json")
-    public boolean login(User user) {
-        if(user.getUserName().equalsIgnoreCase("admin"))
-            return true;
-        return false;
+    @GET
+    @Produces("application/xml")
+    @Path("{user}/{password}")
+    public LoginResult login(@PathParam("user") String user, @PathParam("password") String password) {
+        if(user.equalsIgnoreCase("admin")) 
+            return new LoginResult("", true);
+        return new LoginResult("Invalid user name or password", false);
     }
     
     @GET
@@ -28,9 +26,9 @@ public class UserResource {
     }
     
     @GET
-    @Produces("application/json")
+    @Produces("application/xml")
     @Path("/example/")
-    public User getExample() {
-        return new User("admin", "password");
+    public LoginResult getExample() {
+        return new LoginResult("Message", true);
     }
 }

@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1437323E19D1CBCF00E8D968 /* BaseRestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437323D19D1CBCF00E8D968 /* BaseRestClient.m */; };
+		1437324119D1CC8E00E8D968 /* AuthenticationRestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437324019D1CC8E00E8D968 /* AuthenticationRestClient.m */; };
+		144C1F1219D19EBB0020ED5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 144C1F1119D19EBB0020ED5D /* main.m */; };
+		144C1F1519D19EBB0020ED5D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 144C1F1419D19EBB0020ED5D /* AppDelegate.m */; };
+		144C1F1819D19EBB0020ED5D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 144C1F1719D19EBB0020ED5D /* ViewController.m */; };
+		144C1F1B19D19EBB0020ED5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 144C1F1919D19EBB0020ED5D /* Main.storyboard */; };
+		144C1F1D19D19EBB0020ED5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 144C1F1C19D19EBB0020ED5D /* Images.xcassets */; };
+		144C1F2019D19EBB0020ED5D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144C1F1E19D19EBB0020ED5D /* LaunchScreen.xib */; };
+		144C1F2C19D19EBB0020ED5D /* CoinDispenserIOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 144C1F2B19D19EBB0020ED5D /* CoinDispenserIOSTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		144C1F2619D19EBB0020ED5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 144C1F0419D19EBB0020ED5D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 144C1F0B19D19EBB0020ED5D;
+			remoteInfo = CoinDispenserIOS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1437323C19D1CBCF00E8D968 /* BaseRestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseRestClient.h; sourceTree = "<group>"; };
+		1437323D19D1CBCF00E8D968 /* BaseRestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRestClient.m; sourceTree = "<group>"; };
+		1437323F19D1CC8E00E8D968 /* AuthenticationRestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationRestClient.h; sourceTree = "<group>"; };
+		1437324019D1CC8E00E8D968 /* AuthenticationRestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationRestClient.m; sourceTree = "<group>"; };
+		144C1F0C19D19EBB0020ED5D /* CoinDispenserIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinDispenserIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		144C1F1019D19EBB0020ED5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		144C1F1119D19EBB0020ED5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		144C1F1319D19EBB0020ED5D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		144C1F1419D19EBB0020ED5D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		144C1F1619D19EBB0020ED5D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		144C1F1719D19EBB0020ED5D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		144C1F1A19D19EBB0020ED5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		144C1F1C19D19EBB0020ED5D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		144C1F1F19D19EBB0020ED5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		144C1F2519D19EBB0020ED5D /* CoinDispenserIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinDispenserIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		144C1F2A19D19EBB0020ED5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		144C1F2B19D19EBB0020ED5D /* CoinDispenserIOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoinDispenserIOSTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		144C1F0919D19EBB0020ED5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		144C1F2219D19EBB0020ED5D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1437323B19D1CA0E00E8D968 /* Rest */ = {
+			isa = PBXGroup;
+			children = (
+				1437323C19D1CBCF00E8D968 /* BaseRestClient.h */,
+				1437323D19D1CBCF00E8D968 /* BaseRestClient.m */,
+				1437323F19D1CC8E00E8D968 /* AuthenticationRestClient.h */,
+				1437324019D1CC8E00E8D968 /* AuthenticationRestClient.m */,
+			);
+			name = Rest;
+			sourceTree = "<group>";
+		};
+		144C1F0319D19EBB0020ED5D = {
+			isa = PBXGroup;
+			children = (
+				144C1F0E19D19EBB0020ED5D /* CoinDispenserIOS */,
+				144C1F2819D19EBB0020ED5D /* CoinDispenserIOSTests */,
+				144C1F0D19D19EBB0020ED5D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		144C1F0D19D19EBB0020ED5D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				144C1F0C19D19EBB0020ED5D /* CoinDispenserIOS.app */,
+				144C1F2519D19EBB0020ED5D /* CoinDispenserIOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		144C1F0E19D19EBB0020ED5D /* CoinDispenserIOS */ = {
+			isa = PBXGroup;
+			children = (
+				1437323B19D1CA0E00E8D968 /* Rest */,
+				144C1F1319D19EBB0020ED5D /* AppDelegate.h */,
+				144C1F1419D19EBB0020ED5D /* AppDelegate.m */,
+				144C1F1619D19EBB0020ED5D /* ViewController.h */,
+				144C1F1719D19EBB0020ED5D /* ViewController.m */,
+				144C1F1919D19EBB0020ED5D /* Main.storyboard */,
+				144C1F1C19D19EBB0020ED5D /* Images.xcassets */,
+				144C1F1E19D19EBB0020ED5D /* LaunchScreen.xib */,
+				144C1F0F19D19EBB0020ED5D /* Supporting Files */,
+			);
+			path = CoinDispenserIOS;
+			sourceTree = "<group>";
+		};
+		144C1F0F19D19EBB0020ED5D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				144C1F1019D19EBB0020ED5D /* Info.plist */,
+				144C1F1119D19EBB0020ED5D /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		144C1F2819D19EBB0020ED5D /* CoinDispenserIOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				144C1F2B19D19EBB0020ED5D /* CoinDispenserIOSTests.m */,
+				144C1F2919D19EBB0020ED5D /* Supporting Files */,
+			);
+			path = CoinDispenserIOSTests;
+			sourceTree = "<group>";
+		};
+		144C1F2919D19EBB0020ED5D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				144C1F2A19D19EBB0020ED5D /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		144C1F0B19D19EBB0020ED5D /* CoinDispenserIOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 144C1F2F19D19EBB0020ED5D /* Build configuration list for PBXNativeTarget "CoinDispenserIOS" */;
+			buildPhases = (
+				144C1F0819D19EBB0020ED5D /* Sources */,
+				144C1F0919D19EBB0020ED5D /* Frameworks */,
+				144C1F0A19D19EBB0020ED5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CoinDispenserIOS;
+			productName = CoinDispenserIOS;
+			productReference = 144C1F0C19D19EBB0020ED5D /* CoinDispenserIOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		144C1F2419D19EBB0020ED5D /* CoinDispenserIOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 144C1F3219D19EBB0020ED5D /* Build configuration list for PBXNativeTarget "CoinDispenserIOSTests" */;
+			buildPhases = (
+				144C1F2119D19EBB0020ED5D /* Sources */,
+				144C1F2219D19EBB0020ED5D /* Frameworks */,
+				144C1F2319D19EBB0020ED5D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				144C1F2719D19EBB0020ED5D /* PBXTargetDependency */,
+			);
+			name = CoinDispenserIOSTests;
+			productName = CoinDispenserIOSTests;
+			productReference = 144C1F2519D19EBB0020ED5D /* CoinDispenserIOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		144C1F0419D19EBB0020ED5D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Sean Coetzee";
+				TargetAttributes = {
+					144C1F0B19D19EBB0020ED5D = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					144C1F2419D19EBB0020ED5D = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = 144C1F0B19D19EBB0020ED5D;
+					};
+				};
+			};
+			buildConfigurationList = 144C1F0719D19EBB0020ED5D /* Build configuration list for PBXProject "CoinDispenserIOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 144C1F0319D19EBB0020ED5D;
+			productRefGroup = 144C1F0D19D19EBB0020ED5D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				144C1F0B19D19EBB0020ED5D /* CoinDispenserIOS */,
+				144C1F2419D19EBB0020ED5D /* CoinDispenserIOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		144C1F0A19D19EBB0020ED5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				144C1F1B19D19EBB0020ED5D /* Main.storyboard in Resources */,
+				144C1F2019D19EBB0020ED5D /* LaunchScreen.xib in Resources */,
+				144C1F1D19D19EBB0020ED5D /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		144C1F2319D19EBB0020ED5D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		144C1F0819D19EBB0020ED5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				144C1F1819D19EBB0020ED5D /* ViewController.m in Sources */,
+				144C1F1519D19EBB0020ED5D /* AppDelegate.m in Sources */,
+				1437324119D1CC8E00E8D968 /* AuthenticationRestClient.m in Sources */,
+				144C1F1219D19EBB0020ED5D /* main.m in Sources */,
+				1437323E19D1CBCF00E8D968 /* BaseRestClient.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		144C1F2119D19EBB0020ED5D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				144C1F2C19D19EBB0020ED5D /* CoinDispenserIOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		144C1F2719D19EBB0020ED5D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 144C1F0B19D19EBB0020ED5D /* CoinDispenserIOS */;
+			targetProxy = 144C1F2619D19EBB0020ED5D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		144C1F1919D19EBB0020ED5D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				144C1F1A19D19EBB0020ED5D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		144C1F1E19D19EBB0020ED5D /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				144C1F1F19D19EBB0020ED5D /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		144C1F2D19D19EBB0020ED5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		144C1F2E19D19EBB0020ED5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		144C1F3019D19EBB0020ED5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CoinDispenserIOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		144C1F3119D19EBB0020ED5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CoinDispenserIOS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		144C1F3319D19EBB0020ED5D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CoinDispenserIOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoinDispenserIOS.app/CoinDispenserIOS";
+			};
+			name = Debug;
+		};
+		144C1F3419D19EBB0020ED5D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CoinDispenserIOSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CoinDispenserIOS.app/CoinDispenserIOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		144C1F0719D19EBB0020ED5D /* Build configuration list for PBXProject "CoinDispenserIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				144C1F2D19D19EBB0020ED5D /* Debug */,
+				144C1F2E19D19EBB0020ED5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		144C1F2F19D19EBB0020ED5D /* Build configuration list for PBXNativeTarget "CoinDispenserIOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				144C1F3019D19EBB0020ED5D /* Debug */,
+				144C1F3119D19EBB0020ED5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		144C1F3219D19EBB0020ED5D /* Build configuration list for PBXNativeTarget "CoinDispenserIOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				144C1F3319D19EBB0020ED5D /* Debug */,
+				144C1F3419D19EBB0020ED5D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 144C1F0419D19EBB0020ED5D /* Project object */;
+}
