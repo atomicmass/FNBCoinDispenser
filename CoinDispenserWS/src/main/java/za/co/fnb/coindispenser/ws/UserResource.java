@@ -16,7 +16,7 @@ public class UserResource {
     public LoginResult login(@PathParam("user") String user, @PathParam("password") String password) {
         if(user.equalsIgnoreCase("admin")) 
             return new LoginResult("", true);
-        return new LoginResult("Invalid user name or password", false);
+        return new LoginResult("Login failed", false);
     }
     
     @GET

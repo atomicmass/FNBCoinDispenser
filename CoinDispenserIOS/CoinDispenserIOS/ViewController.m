@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "AuthenticationRestClient.h"
+#import "LoginResult.h"
 
 @interface ViewController ()
 
@@ -27,6 +29,21 @@
 }
 
 - (IBAction)btnLoginAction:(id)sender {
+    [self.view endEditing:YES];
     
+    AuthenticationRestClient *auth = [[AuthenticationRestClient alloc] init];
+    
+    NSString *uname = self.txtUserName.text;
+    NSString *pass = self.txtPassword.text;
+    
+    [auth authenticateUser:self userName:uname password:pass];
 }
+
+- (void) updateAuth:(LoginResult *)res {
+    NSLog(@"Update auth");
+    NSLog(@"%@", res.success);
+
+    [self.lblMessage setText:res.result];
+ }
+
 @end

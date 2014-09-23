@@ -4,5 +4,4 @@ za/co/fnb/coindispenser/dto/DispenseCalculation.class
 za/co/fnb/coindispenser/ws/UserResource.class
 za/co/fnb/coindispenser/dto/LoginResult.class
 za/co/fnb/rest/MyApplication.class
-za/co/fnb/coindispenser/dto/User.class
 za/co/fnb/coindispenser/dto/DispenseCash.class

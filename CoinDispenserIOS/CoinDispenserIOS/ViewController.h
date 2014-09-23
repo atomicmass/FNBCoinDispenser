@@ -7,15 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+@class LoginResult;
 
 @interface ViewController : UIViewController
+
 
 @property (weak, nonatomic) IBOutlet UITextField *txtUserName;
 @property (weak, nonatomic) IBOutlet UITextField *txtPassword;
 @property (weak, nonatomic) IBOutlet UILabel *lblMessage;
 @property (copy, nonatomic) NSString *userName;
 - (IBAction)btnLoginAction:(id)sender;
-
+- (void) updateAuth:(LoginResult *)data;
 
 @end
 

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1437323E19D1CBCF00E8D968 /* BaseRestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437323D19D1CBCF00E8D968 /* BaseRestClient.m */; };
 		1437324119D1CC8E00E8D968 /* AuthenticationRestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437324019D1CC8E00E8D968 /* AuthenticationRestClient.m */; };
+		1437324419D1CCE800E8D968 /* LoginResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 1437324319D1CCE800E8D968 /* LoginResult.m */; };
 		144C1F1219D19EBB0020ED5D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 144C1F1119D19EBB0020ED5D /* main.m */; };
 		144C1F1519D19EBB0020ED5D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 144C1F1419D19EBB0020ED5D /* AppDelegate.m */; };
 		144C1F1819D19EBB0020ED5D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 144C1F1719D19EBB0020ED5D /* ViewController.m */; };
@@ -33,6 +34,8 @@
 		1437323D19D1CBCF00E8D968 /* BaseRestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseRestClient.m; sourceTree = "<group>"; };
 		1437323F19D1CC8E00E8D968 /* AuthenticationRestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AuthenticationRestClient.h; sourceTree = "<group>"; };
 		1437324019D1CC8E00E8D968 /* AuthenticationRestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AuthenticationRestClient.m; sourceTree = "<group>"; };
+		1437324219D1CCE800E8D968 /* LoginResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginResult.h; sourceTree = "<group>"; };
+		1437324319D1CCE800E8D968 /* LoginResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginResult.m; sourceTree = "<group>"; };
 		144C1F0C19D19EBB0020ED5D /* CoinDispenserIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoinDispenserIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		144C1F1019D19EBB0020ED5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		144C1F1119D19EBB0020ED5D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -73,6 +76,8 @@
 				1437323D19D1CBCF00E8D968 /* BaseRestClient.m */,
 				1437323F19D1CC8E00E8D968 /* AuthenticationRestClient.h */,
 				1437324019D1CC8E00E8D968 /* AuthenticationRestClient.m */,
+				1437324219D1CCE800E8D968 /* LoginResult.h */,
+				1437324319D1CCE800E8D968 /* LoginResult.m */,
 			);
 			name = Rest;
 			sourceTree = "<group>";
@@ -241,6 +246,7 @@
 				144C1F1519D19EBB0020ED5D /* AppDelegate.m in Sources */,
 				1437324119D1CC8E00E8D968 /* AuthenticationRestClient.m in Sources */,
 				144C1F1219D19EBB0020ED5D /* main.m in Sources */,
+				1437324419D1CCE800E8D968 /* LoginResult.m in Sources */,
 				1437323E19D1CBCF00E8D968 /* BaseRestClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
