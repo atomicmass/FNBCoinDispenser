@@ -30,7 +30,7 @@ public class CoinDispenserResource {
 
     @POST
     @Produces("application/xml")
-    @Consumes("application/xml")
+    @Consumes("application/json")
     public DispenseCalculation calculate(DispenseCalculation calc) {
         if (calc.getAmountDue().compareTo(calc.getNoteReceived()) > 0) {
             calc.setMessage("Insufficient amount received.");

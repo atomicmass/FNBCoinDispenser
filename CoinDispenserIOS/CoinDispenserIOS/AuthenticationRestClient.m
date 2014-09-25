@@ -1,3 +1,5 @@
+#pragma GCC diagnostic ignored "-Wundeclared-selector"
+
 #import "AuthenticationRestClient.h"
 
 #import "BaseRestClient.h"
@@ -29,18 +31,14 @@
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    
-    NSLog(@"Received Response");
-    
     if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-        int status = [httpResponse statusCode];
+        int status = (int)httpResponse.statusCode;
         
         if (!((status >= 200) && (status < 300))) {
             NSLog(@"Connection failed with status %d", status);
             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
         } else {
-            // make the working space for the REST data buffer.  This could also be a file if you want to reduce the RAM footprint
             wipData = [[NSMutableData alloc] initWithCapacity:1024];
         }
     }
@@ -51,24 +49,16 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)conn {
-    // do a little debug dump
-    NSString *xml = [[NSString alloc] initWithData:wipData encoding:NSUTF8StringEncoding];
-    NSLog(@"xml = %@", xml);
-    
     [self parseDocument:wipData];
     
-    // after parsing, call the controller to report that the tranfer is done
     if ([controller respondsToSelector:@selector(updateAuth:)]) {
         [controller performSelector:@selector(updateAuth:) withObject:result];
     }
-    // turn off the network indicator
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-    
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     NSLog(@"Connection failed");
-    
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
@@ -81,13 +71,12 @@
     }
 }
 
+
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
     if ([elementName isEqualToString:@"loginResult"]) {
-        // save the work in progress user to the results, which increments the retain count
         result = wipResult;
         wipResult = nil;
-        
     } else if ([elementName isEqualToString:@"result"]) {
         [wipResult setResult:_contentsOfElement];
         

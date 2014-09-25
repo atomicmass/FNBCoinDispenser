@@ -20,14 +20,27 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    //Set up deleaget to hide kyboard when the user taps out
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+}
+
+-(void)dismissKeyboard {
+    [self.txtUserName resignFirstResponder];
+    [self.txtPassword resignFirstResponder];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
+/**
+ * Kick off the REST service to authenticate the user (async)
+ */
 - (IBAction)btnLoginAction:(id)sender {
     [self.view endEditing:YES];
     
@@ -39,11 +52,18 @@
     [auth authenticateUser:self userName:uname password:pass];
 }
 
+/**
+ * Gets called once the REST service returns
+ */
 - (void) updateAuth:(LoginResult *)res {
     NSLog(@"Update auth");
     NSLog(@"%@", res.success);
 
     [self.lblMessage setText:res.result];
+    
+    if([res.success isEqualToString:@"true"]) {
+        [self performSegueWithIdentifier:@"successfulLogin" sender:self];
+    }
  }
 
 @end

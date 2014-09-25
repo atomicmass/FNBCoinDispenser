@@ -18,17 +18,4 @@ public class UserResource {
             return new LoginResult("", true);
         return new LoginResult("Login failed", false);
     }
-    
-    @GET
-    @Produces("text/plain")
-    public String service() {
-        return "This is a service";
-    }
-    
-    @GET
-    @Produces("application/xml")
-    @Path("/example/")
-    public LoginResult getExample() {
-        return new LoginResult("Message", true);
-    }
 }

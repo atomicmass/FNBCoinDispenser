@@ -19,11 +19,12 @@
     _contentsOfElement = [[NSMutableString alloc] init];
 }
 
+/**
+ * Start parsing the XML documnent using the parser in the child classes
+ */
 - (void) parseDocument:(NSData *) data {
     NSXMLParser *parser = [[NSXMLParser alloc] initWithData:data];
-    
     [parser setDelegate:self];
-    // Depending on the XML document you're parsing, you may want to enable these features of NSXMLParser.
     [parser setShouldProcessNamespaces:NO];
     [parser setShouldReportNamespacePrefixes:NO];
     [parser setShouldResolveExternalEntities:NO];

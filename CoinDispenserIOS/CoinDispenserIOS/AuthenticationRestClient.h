@@ -11,8 +11,8 @@
 @class LoginResult;
 
 @interface AuthenticationRestClient : BaseRestClient {
-    NSMutableData		*wipData;		// The data being received from the rest service
-    LoginResult			*wipResult;		// the work in progress user
+    NSMutableData		*wipData;
+    LoginResult			*wipResult;
 }
 
 

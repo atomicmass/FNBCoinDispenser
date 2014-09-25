@@ -17,6 +17,10 @@
 		144C1F1D19D19EBB0020ED5D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 144C1F1C19D19EBB0020ED5D /* Images.xcassets */; };
 		144C1F2019D19EBB0020ED5D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 144C1F1E19D19EBB0020ED5D /* LaunchScreen.xib */; };
 		144C1F2C19D19EBB0020ED5D /* CoinDispenserIOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 144C1F2B19D19EBB0020ED5D /* CoinDispenserIOSTests.m */; };
+		14DCCBBA19D2D11D00ACEA77 /* CoinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DCCBB919D2D11D00ACEA77 /* CoinViewController.m */; };
+		14DCCBBD19D3513E00ACEA77 /* CalculationRestClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DCCBBC19D3513E00ACEA77 /* CalculationRestClient.m */; };
+		14DCCBC019D3F6DD00ACEA77 /* DispenseCalculation.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DCCBBF19D3F6DD00ACEA77 /* DispenseCalculation.m */; };
+		14DCCBC319D3F7BD00ACEA77 /* DispenseCash.m in Sources */ = {isa = PBXBuildFile; fileRef = 14DCCBC219D3F7BD00ACEA77 /* DispenseCash.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,14 @@
 		144C1F2519D19EBB0020ED5D /* CoinDispenserIOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoinDispenserIOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		144C1F2A19D19EBB0020ED5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		144C1F2B19D19EBB0020ED5D /* CoinDispenserIOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CoinDispenserIOSTests.m; sourceTree = "<group>"; };
+		14DCCBB819D2D11D00ACEA77 /* CoinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoinViewController.h; sourceTree = "<group>"; };
+		14DCCBB919D2D11D00ACEA77 /* CoinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoinViewController.m; sourceTree = "<group>"; };
+		14DCCBBB19D3513E00ACEA77 /* CalculationRestClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculationRestClient.h; sourceTree = "<group>"; };
+		14DCCBBC19D3513E00ACEA77 /* CalculationRestClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculationRestClient.m; sourceTree = "<group>"; };
+		14DCCBBE19D3F6DD00ACEA77 /* DispenseCalculation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispenseCalculation.h; sourceTree = "<group>"; };
+		14DCCBBF19D3F6DD00ACEA77 /* DispenseCalculation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispenseCalculation.m; sourceTree = "<group>"; };
+		14DCCBC119D3F7BD00ACEA77 /* DispenseCash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DispenseCash.h; sourceTree = "<group>"; };
+		14DCCBC219D3F7BD00ACEA77 /* DispenseCash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DispenseCash.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +90,12 @@
 				1437324019D1CC8E00E8D968 /* AuthenticationRestClient.m */,
 				1437324219D1CCE800E8D968 /* LoginResult.h */,
 				1437324319D1CCE800E8D968 /* LoginResult.m */,
+				14DCCBBB19D3513E00ACEA77 /* CalculationRestClient.h */,
+				14DCCBBC19D3513E00ACEA77 /* CalculationRestClient.m */,
+				14DCCBBE19D3F6DD00ACEA77 /* DispenseCalculation.h */,
+				14DCCBBF19D3F6DD00ACEA77 /* DispenseCalculation.m */,
+				14DCCBC119D3F7BD00ACEA77 /* DispenseCash.h */,
+				14DCCBC219D3F7BD00ACEA77 /* DispenseCash.m */,
 			);
 			name = Rest;
 			sourceTree = "<group>";
@@ -112,6 +130,8 @@
 				144C1F1C19D19EBB0020ED5D /* Images.xcassets */,
 				144C1F1E19D19EBB0020ED5D /* LaunchScreen.xib */,
 				144C1F0F19D19EBB0020ED5D /* Supporting Files */,
+				14DCCBB819D2D11D00ACEA77 /* CoinViewController.h */,
+				14DCCBB919D2D11D00ACEA77 /* CoinViewController.m */,
 			);
 			path = CoinDispenserIOS;
 			sourceTree = "<group>";
@@ -242,12 +262,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14DCCBBA19D2D11D00ACEA77 /* CoinViewController.m in Sources */,
 				144C1F1819D19EBB0020ED5D /* ViewController.m in Sources */,
 				144C1F1519D19EBB0020ED5D /* AppDelegate.m in Sources */,
 				1437324119D1CC8E00E8D968 /* AuthenticationRestClient.m in Sources */,
 				144C1F1219D19EBB0020ED5D /* main.m in Sources */,
 				1437324419D1CCE800E8D968 /* LoginResult.m in Sources */,
+				14DCCBC019D3F6DD00ACEA77 /* DispenseCalculation.m in Sources */,
+				14DCCBBD19D3513E00ACEA77 /* CalculationRestClient.m in Sources */,
 				1437323E19D1CBCF00E8D968 /* BaseRestClient.m in Sources */,
+				14DCCBC319D3F7BD00ACEA77 /* DispenseCash.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
