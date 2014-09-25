@@ -23,16 +23,20 @@
     return self;
 }
 
+/**
+ * Constructs REST call and fire it off asynchronously
+ */
 -(void) calculate:(id)cntrller calculation:(DispenseCalculation *)calc {
     self.controller = cntrller;
-    NSString *urlStr = @"http://localhost:8080/CoinDispenserWS/dispenser";
+    NSString *urlStr = @"http://localhost:8080/CoinDispenserWS/dispenser"; //TODO: parameterize
     NSURL *url = [NSURL URLWithString:urlStr];
-    
+
     NSString *json = [NSString stringWithFormat:@"{\"amountDue\": %.2f, \"noteReceived\":%.0f }", calc.amountDue, calc.noteReceived];
     NSLog(@"JSON: %@", json);
     
     [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
-    
+
+    //Setup the POST request and send
     NSMutableURLRequest *req = [NSMutableURLRequest
                             requestWithURL:url
                             cachePolicy:NSURLRequestReloadIgnoringCacheData
@@ -46,8 +50,10 @@
     [NSURLConnection connectionWithRequest:req delegate:self];
 }
 
+/**
+ * If a response was received from the REST service. Handling the actual data comes later
+ */
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    
     NSLog(@"Received Response");
     
     if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
@@ -67,6 +73,9 @@
     [wipData appendData:data];
 }
 
+/**
+ * Handle the data once the service has finished loading
+ */
 - (void)connectionDidFinishLoading:(NSURLConnection *)conn {
     [self parseDocument:wipData];
     
@@ -82,6 +91,9 @@
     [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
+/**
+ * XML Parsing. When an element starts we may need to construct stuff
+ */
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
     [self clearContentsOfElement];
@@ -92,6 +104,10 @@
         wipCash = [[DispenseCash alloc] init];
     }
 }
+
+/**
+ * XML Parsing. Elements ended. Add the value to the object model
+ */
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
