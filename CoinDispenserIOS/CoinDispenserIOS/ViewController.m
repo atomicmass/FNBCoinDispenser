@@ -49,21 +49,20 @@
     NSString *uname = self.txtUserName.text;
     NSString *pass = self.txtPassword.text;
     
-    [auth authenticateUser:self userName:uname password:pass];
+    void (^completionHandler)(LoginResult *) = ^(LoginResult *result) {
+        LoginResult *res = (LoginResult *)result;
+        NSLog(@"Update auth");
+        NSLog(@"%@", res.success);
+            
+        [self.lblMessage setText:res.result];
+            
+        if([res.success isEqualToString:@"true"]) {
+            [self performSegueWithIdentifier:@"successfulLogin" sender:self];
+        }
+    };
+    
+    [auth authenticateUser:uname password:pass completionHandler:completionHandler];
 }
 
-/**
- * Gets called once the REST service returns
- */
-- (void) updateAuth:(LoginResult *)res {
-    NSLog(@"Update auth");
-    NSLog(@"%@", res.success);
-
-    [self.lblMessage setText:res.result];
-    
-    if([res.success isEqualToString:@"true"]) {
-        [self performSegueWithIdentifier:@"successfulLogin" sender:self];
-    }
- }
 
 @end

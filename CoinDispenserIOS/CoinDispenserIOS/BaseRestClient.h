@@ -7,10 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+@class LoginResult;
 
 @interface BaseRestClient : NSObject <NSXMLParserDelegate> {
-    NSMutableString		*_contentsOfElement;
+    NSMutableData       *wipData;		// The data being received from the rest service
+    NSMutableString		*contentsOfElement;
 }
+
+@property (nonatomic) id result;
+@property (nonatomic, strong) void (^completionHandler)(LoginResult *);
 
 - (id) init;
 - (void) parseDocument:(NSData *) data ;

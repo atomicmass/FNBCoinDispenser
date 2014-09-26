@@ -84,18 +84,12 @@
 		1437323B19D1CA0E00E8D968 /* Rest */ = {
 			isa = PBXGroup;
 			children = (
+				14DCCBBB19D3513E00ACEA77 /* CalculationRestClient.h */,
+				14DCCBBC19D3513E00ACEA77 /* CalculationRestClient.m */,
 				1437323C19D1CBCF00E8D968 /* BaseRestClient.h */,
 				1437323D19D1CBCF00E8D968 /* BaseRestClient.m */,
 				1437323F19D1CC8E00E8D968 /* AuthenticationRestClient.h */,
 				1437324019D1CC8E00E8D968 /* AuthenticationRestClient.m */,
-				1437324219D1CCE800E8D968 /* LoginResult.h */,
-				1437324319D1CCE800E8D968 /* LoginResult.m */,
-				14DCCBBB19D3513E00ACEA77 /* CalculationRestClient.h */,
-				14DCCBBC19D3513E00ACEA77 /* CalculationRestClient.m */,
-				14DCCBBE19D3F6DD00ACEA77 /* DispenseCalculation.h */,
-				14DCCBBF19D3F6DD00ACEA77 /* DispenseCalculation.m */,
-				14DCCBC119D3F7BD00ACEA77 /* DispenseCash.h */,
-				14DCCBC219D3F7BD00ACEA77 /* DispenseCash.m */,
 			);
 			name = Rest;
 			sourceTree = "<group>";
@@ -121,17 +115,15 @@
 		144C1F0E19D19EBB0020ED5D /* CoinDispenserIOS */ = {
 			isa = PBXGroup;
 			children = (
-				1437323B19D1CA0E00E8D968 /* Rest */,
 				144C1F1319D19EBB0020ED5D /* AppDelegate.h */,
 				144C1F1419D19EBB0020ED5D /* AppDelegate.m */,
-				144C1F1619D19EBB0020ED5D /* ViewController.h */,
-				144C1F1719D19EBB0020ED5D /* ViewController.m */,
-				144C1F1919D19EBB0020ED5D /* Main.storyboard */,
 				144C1F1C19D19EBB0020ED5D /* Images.xcassets */,
+				14727E6019D47AC200D2B4DB /* Controllers */,
 				144C1F1E19D19EBB0020ED5D /* LaunchScreen.xib */,
+				144C1F1919D19EBB0020ED5D /* Main.storyboard */,
+				14727E6119D47AD800D2B4DB /* Model */,
+				1437323B19D1CA0E00E8D968 /* Rest */,
 				144C1F0F19D19EBB0020ED5D /* Supporting Files */,
-				14DCCBB819D2D11D00ACEA77 /* CoinViewController.h */,
-				14DCCBB919D2D11D00ACEA77 /* CoinViewController.m */,
 			);
 			path = CoinDispenserIOS;
 			sourceTree = "<group>";
@@ -160,6 +152,30 @@
 				144C1F2A19D19EBB0020ED5D /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		14727E6019D47AC200D2B4DB /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				14DCCBB819D2D11D00ACEA77 /* CoinViewController.h */,
+				14DCCBB919D2D11D00ACEA77 /* CoinViewController.m */,
+				144C1F1619D19EBB0020ED5D /* ViewController.h */,
+				144C1F1719D19EBB0020ED5D /* ViewController.m */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		14727E6119D47AD800D2B4DB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1437324219D1CCE800E8D968 /* LoginResult.h */,
+				1437324319D1CCE800E8D968 /* LoginResult.m */,
+				14DCCBBE19D3F6DD00ACEA77 /* DispenseCalculation.h */,
+				14DCCBBF19D3F6DD00ACEA77 /* DispenseCalculation.m */,
+				14DCCBC119D3F7BD00ACEA77 /* DispenseCash.h */,
+				14DCCBC219D3F7BD00ACEA77 /* DispenseCash.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

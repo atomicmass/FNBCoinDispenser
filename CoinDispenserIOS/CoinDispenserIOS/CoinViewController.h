@@ -21,5 +21,4 @@
 - (IBAction) btn10Clicked:(id)sender;
 - (void) calculateChange:(double) note;
 - (void) displayAmountDue;
-- (void) updateCalculation:(DispenseCalculation *)data;
 @end

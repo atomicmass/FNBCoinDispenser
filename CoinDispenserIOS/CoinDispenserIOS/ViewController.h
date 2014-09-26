@@ -17,7 +17,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblMessage;
 @property (copy, nonatomic) NSString *userName;
 - (IBAction)btnLoginAction:(id)sender;
-- (void) updateAuth:(LoginResult *)data;
 
 @end
 

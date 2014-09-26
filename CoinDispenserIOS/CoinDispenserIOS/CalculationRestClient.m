@@ -6,8 +6,6 @@
 //  Copyright (c) 2014 Sean Coetzee. All rights reserved.
 //
 
-#pragma GCC diagnostic ignored "-Wundeclared-selector"
-
 #import "CalculationRestClient.h"
 #import "DispenseCalculation.h"
 #import "DispenseCash.h"
@@ -15,7 +13,7 @@
 
 @implementation CalculationRestClient
 
-@synthesize result, controller;
+@synthesize result;
 
 -(id) init {
     self = [super init];
@@ -26,8 +24,8 @@
 /**
  * Constructs REST call and fire it off asynchronously
  */
--(void) calculate:(id)cntrller calculation:(DispenseCalculation *)calc {
-    self.controller = cntrller;
+-(void) calculate:(DispenseCalculation *)calc completionHandler:(void(^)(id)) completionHandler {
+    self.completionHandler = completionHandler;
     NSString *urlStr = @"http://localhost:8080/CoinDispenserWS/dispenser"; //TODO: parameterize
     NSURL *url = [NSURL URLWithString:urlStr];
 
@@ -48,47 +46,6 @@
     [req setHTTPBody:requestBodyData];
     
     [NSURLConnection connectionWithRequest:req delegate:self];
-}
-
-/**
- * If a response was received from the REST service. Handling the actual data comes later
- */
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
-    NSLog(@"Received Response");
-    
-    if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
-        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
-        int status = (int)httpResponse.statusCode;
-        
-        if (!((status >= 200) && (status < 300))) {
-            NSLog(@"Connection failed with status %d", status);
-            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        } else {
-            wipData = [[NSMutableData alloc] initWithCapacity:1024];
-        }
-    }
-}
-
-- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
-    [wipData appendData:data];
-}
-
-/**
- * Handle the data once the service has finished loading
- */
-- (void)connectionDidFinishLoading:(NSURLConnection *)conn {
-    [self parseDocument:wipData];
-    
-    if ([controller respondsToSelector:@selector(updateCalculation:)]) {
-        [controller performSelector:@selector(updateCalculation:) withObject:result];
-    }
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-}
-
-- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
-    NSLog(@"Connection failed");
-    
-    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
 }
 
 /**
@@ -118,15 +75,15 @@
         [wipResult.cashToDispense addObject:wipCash];
         wipCash = nil;
     } else if ([elementName isEqualToString:@"amountDue"]) {
-        [wipResult setAmountDue:[_contentsOfElement doubleValue]];
+        [wipResult setAmountDue:[contentsOfElement doubleValue]];
     } else if ([elementName isEqualToString:@"noteReceived"]) {
-        [wipResult setNoteReceived:[_contentsOfElement doubleValue]];
+        [wipResult setNoteReceived:[contentsOfElement doubleValue]];
     } else if ([elementName isEqualToString:@"denomination"]) {
-        [wipCash setDenomination:[_contentsOfElement doubleValue]];
+        [wipCash setDenomination:[contentsOfElement doubleValue]];
     } else if ([elementName isEqualToString:@"quantity"]) {
-        [wipCash setQuantity:[_contentsOfElement intValue]];
+        [wipCash setQuantity:[contentsOfElement intValue]];
     } else if ([elementName isEqualToString:@"message"]) {
-        [wipResult setMessage:_contentsOfElement];
+        [wipResult setMessage:contentsOfElement];
     }
     
     [self clearContentsOfElement];
