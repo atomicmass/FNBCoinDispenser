@@ -12,10 +12,9 @@
 @class DispenseCash;
 
 @interface CalculationRestClient : BaseRestClient {
-    DispenseCalculation			*wipResult;		// the work in progress result
     DispenseCash                *wipCash;
 }
 
--(void) calculate:(DispenseCalculation *)calc completionHandler:(void(^)(id)) completionHandler;
+-(void) calculate:(DispenseCalculation *)calc completionHandler:(void(^)()) completionHandler;
 
 @end

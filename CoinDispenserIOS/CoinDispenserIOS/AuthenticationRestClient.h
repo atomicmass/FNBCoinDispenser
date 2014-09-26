@@ -10,10 +10,11 @@
 #import "BaseRestClient.h"
 @class LoginResult;
 
-@interface AuthenticationRestClient : BaseRestClient {
-    LoginResult			*wipResult;
-}
+@interface AuthenticationRestClient : BaseRestClient
 
--(void) authenticateUser:(NSString *)uname password:(NSString *)pass completionHandler:(void(^)(LoginResult *)) completionHandler;
+-(void) authenticateUser:(NSString *)uname
+                password:(NSString *)pass
+                completionHandler:(void(^)()) completionHandler
+                loginResult:(LoginResult *)rslt;
 
 @end

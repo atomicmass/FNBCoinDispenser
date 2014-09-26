@@ -13,19 +13,13 @@
 
 @implementation CalculationRestClient
 
-@synthesize result;
-
--(id) init {
-    self = [super init];
-    result = [[DispenseCalculation alloc] init];
-    return self;
-}
-
 /**
  * Constructs REST call and fire it off asynchronously
  */
--(void) calculate:(DispenseCalculation *)calc completionHandler:(void(^)(id)) completionHandler {
+-(void) calculate:(DispenseCalculation *)calc completionHandler:(void(^)()) completionHandler {
     self.completionHandler = completionHandler;
+    self.result = calc;
+    
     NSString *urlStr = @"http://localhost:8080/CoinDispenserWS/dispenser"; //TODO: parameterize
     NSURL *url = [NSURL URLWithString:urlStr];
 
@@ -55,9 +49,7 @@
 {
     [self clearContentsOfElement];
     
-    if ([elementName isEqualToString:@"dispenseCalculation"]) {
-        wipResult = [[DispenseCalculation alloc] init];
-    } else if ([elementName isEqualToString:@"cashToDispense"]) {
+    if ([elementName isEqualToString:@"cashToDispense"]) {
         wipCash = [[DispenseCash alloc] init];
     }
 }
@@ -65,25 +57,21 @@
 /**
  * XML Parsing. Elements ended. Add the value to the object model
  */
-
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
-    if ([elementName isEqualToString:@"dispenseCalculation"]) {
-        result = wipResult;
-        wipResult = nil;
-    } else if([elementName isEqualToString:@"cashToDispense"]) {
-        [wipResult.cashToDispense addObject:wipCash];
+    if([elementName isEqualToString:@"cashToDispense"]) {
+        [((DispenseCalculation *)self.result).cashToDispense addObject:wipCash];
         wipCash = nil;
     } else if ([elementName isEqualToString:@"amountDue"]) {
-        [wipResult setAmountDue:[contentsOfElement doubleValue]];
+        [(DispenseCalculation *)self.result setAmountDue:[contentsOfElement doubleValue]];
     } else if ([elementName isEqualToString:@"noteReceived"]) {
-        [wipResult setNoteReceived:[contentsOfElement doubleValue]];
+        [(DispenseCalculation *)self.result setNoteReceived:[contentsOfElement doubleValue]];
     } else if ([elementName isEqualToString:@"denomination"]) {
         [wipCash setDenomination:[contentsOfElement doubleValue]];
     } else if ([elementName isEqualToString:@"quantity"]) {
         [wipCash setQuantity:[contentsOfElement intValue]];
     } else if ([elementName isEqualToString:@"message"]) {
-        [wipResult setMessage:contentsOfElement];
+        [(DispenseCalculation *)self.result setMessage:contentsOfElement];
     }
     
     [self clearContentsOfElement];

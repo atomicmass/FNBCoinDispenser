@@ -48,20 +48,22 @@
     
     NSString *uname = self.txtUserName.text;
     NSString *pass = self.txtPassword.text;
+    //Init the variable to hold the result from the service
+    LoginResult *result = [[LoginResult alloc] init];
     
-    void (^completionHandler)(LoginResult *) = ^(LoginResult *result) {
-        LoginResult *res = (LoginResult *)result;
+    //When the service returns this block wil handle it using the result variable
+    void (^completionHandler)() = ^() {
         NSLog(@"Update auth");
-        NSLog(@"%@", res.success);
+        NSLog(@"%@", result.success);
             
-        [self.lblMessage setText:res.result];
+        [self.lblMessage setText:result.result];
             
-        if([res.success isEqualToString:@"true"]) {
+        if([result.success isEqualToString:@"true"]) {
             [self performSegueWithIdentifier:@"successfulLogin" sender:self];
         }
     };
     
-    [auth authenticateUser:uname password:pass completionHandler:completionHandler];
+    [auth authenticateUser:uname password:pass completionHandler:completionHandler loginResult:result];
 }
 
 

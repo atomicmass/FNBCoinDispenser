@@ -6,19 +6,12 @@
 
 @implementation AuthenticationRestClient
 
-@synthesize result;
-
--(id) init {
-    self = [super init];
-    result = [[LoginResult alloc] init];
-    return self;
-}
-
 /**
  * Asynchorniously trigger the REST service to authdnticate the user
  */
--(void) authenticateUser:(NSString *)uname password:(NSString *)pass completionHandler:(void(^)(LoginResult *)) completionHandler {
+-(void) authenticateUser:(NSString *)uname password:(NSString *)pass completionHandler:(void(^)()) completionHandler loginResult:(LoginResult *)rslt {
     self.completionHandler = completionHandler;
+    self.result = rslt;
     NSString *urlStr = [NSString stringWithFormat:@"http://localhost:8080/CoinDispenserWS/user/%@/%@", uname, pass]; //TODO parameterize
     NSURL *url = [NSURL URLWithString:urlStr];
     
@@ -32,17 +25,12 @@
     [NSURLConnection connectionWithRequest:req delegate:self];
 }
 
-
 /**
  * XML parsing. On start element we may need to setup stuff
  */
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
     [self clearContentsOfElement];
-    
-    if ([elementName isEqualToString:@"loginResult"]) {
-        wipResult = [[LoginResult alloc] init];
-    }
 }
 
 /**
@@ -50,14 +38,11 @@
  */
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
-    if ([elementName isEqualToString:@"loginResult"]) {
-        result = wipResult;
-        wipResult = nil;
-    } else if ([elementName isEqualToString:@"result"]) {
-        [wipResult setResult:contentsOfElement];
+    if ([elementName isEqualToString:@"result"]) {
+        [(LoginResult *)self.result setResult:contentsOfElement];
         
     } else if ([elementName isEqualToString:@"success"]) {
-        [wipResult setSuccess:contentsOfElement];
+        [(LoginResult *)self.result setSuccess:contentsOfElement];
     }
     [self clearContentsOfElement];
 }

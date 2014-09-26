@@ -15,11 +15,6 @@
 
 @synthesize result, completionHandler;
 
-- (id) init {
-    self = [super init];
-    return self;
-}
-
 - (void) clearContentsOfElement {
     contentsOfElement = [[NSMutableString alloc] init];
 }
