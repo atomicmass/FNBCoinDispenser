@@ -6,17 +6,17 @@
 //  Copyright (c) 2014 Sean Coetzee. All rights reserved.
 //
 
+#pragma GCC diagnostic ignored "-Wundeclared-selector"
+
 #import "BaseRestClient.h"
+#import <UIKit/UIKit.h>
 
 @implementation BaseRestClient
 
-- (id) init {
-    self = [super init];
-    return self;
-}
+@synthesize result, completionHandler;
 
 - (void) clearContentsOfElement {
-    _contentsOfElement = [[NSMutableString alloc] init];
+    contentsOfElement = [[NSMutableString alloc] init];
 }
 
 /**
@@ -34,11 +34,48 @@
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
-    [_contentsOfElement appendString:string];
+    [contentsOfElement appendString:string];
 }
 
 - (NSString *)trim:(NSString *)inStr {
     return [inStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
+
+- (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
+    [wipData appendData:data];
+}
+
+/**
+ * All the data has loaded. Parse it.
+ */
+- (void)connectionDidFinishLoading:(NSURLConnection *)conn {
+    [self parseDocument:wipData];
+    
+    completionHandler(result);
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
+- (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
+    NSLog(@"Connection failed");
+    [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+}
+
+/**
+ * This just indicates that we are getting a response. Does not handle the response itself.
+ */
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+    if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+        int status = (int)httpResponse.statusCode;
+        
+        if (!((status >= 200) && (status < 300))) {
+            NSLog(@"Connection failed with status %d", status);
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        } else {
+            wipData = [[NSMutableData alloc] initWithCapacity:1024];
+        }
+    }
+}
+
 
 @end

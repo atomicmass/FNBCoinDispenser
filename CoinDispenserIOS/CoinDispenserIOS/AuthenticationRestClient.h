@@ -10,15 +10,11 @@
 #import "BaseRestClient.h"
 @class LoginResult;
 
-@interface AuthenticationRestClient : BaseRestClient {
-    NSMutableData		*wipData;
-    LoginResult			*wipResult;
-}
+@interface AuthenticationRestClient : BaseRestClient
 
-
-@property (nonatomic) LoginResult *result;
-@property (nonatomic) id controller;
-
--(void) authenticateUser:(id)controller userName:(NSString *)uname password:(NSString *)pass;
+-(void) authenticateUser:(NSString *)uname
+                password:(NSString *)pass
+                completionHandler:(void(^)()) completionHandler
+                loginResult:(LoginResult *)rslt;
 
 @end

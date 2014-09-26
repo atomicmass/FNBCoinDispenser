@@ -6,15 +6,15 @@
 //  Copyright (c) 2014 Sean Coetzee. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "LoginViewController.h"
 #import "AuthenticationRestClient.h"
 #import "LoginResult.h"
 
-@interface ViewController ()
+@interface LoginViewController ()
 
 @end
 
-@implementation ViewController
+@implementation LoginViewController
 
 @synthesize userName;
 
@@ -44,26 +44,33 @@
 - (IBAction)btnLoginAction:(id)sender {
     [self.view endEditing:YES];
     
-    AuthenticationRestClient *auth = [[AuthenticationRestClient alloc] init];
-    
     NSString *uname = self.txtUserName.text;
     NSString *pass = self.txtPassword.text;
     
-    [auth authenticateUser:self userName:uname password:pass];
+    if([uname length] == 0 || [pass length] == 0) {
+        [self.lblMessage setText:@"User name and password required"];
+        return;
+    }
+    
+    AuthenticationRestClient *auth = [[AuthenticationRestClient alloc] init];
+    
+    //Init the variable to hold the result from the service
+    LoginResult *result = [[LoginResult alloc] init];
+    
+    //When the service returns this block wil handle it using the result variable
+    void (^completionHandler)() = ^() {
+        NSLog(@"Update auth");
+        NSLog(@"%@", result.success);
+            
+        [self.lblMessage setText:result.result];
+            
+        if([result.success isEqualToString:@"true"]) {
+            [self performSegueWithIdentifier:@"successfulLogin" sender:self];
+        }
+    };
+    
+    [auth authenticateUser:uname password:pass completionHandler:completionHandler loginResult:result];
 }
 
-/**
- * Gets called once the REST service returns
- */
-- (void) updateAuth:(LoginResult *)res {
-    NSLog(@"Update auth");
-    NSLog(@"%@", res.success);
-
-    [self.lblMessage setText:res.result];
-    
-    if([res.success isEqualToString:@"true"]) {
-        [self performSegueWithIdentifier:@"successfulLogin" sender:self];
-    }
- }
 
 @end

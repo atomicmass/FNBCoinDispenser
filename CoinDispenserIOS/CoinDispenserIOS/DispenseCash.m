@@ -12,9 +12,4 @@
 
 @synthesize denomination, quantity;
 
-- (id) init {
-    self = [super init];
-    return self;
-}
-
 @end

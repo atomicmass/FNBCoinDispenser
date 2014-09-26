@@ -12,14 +12,9 @@
 @class DispenseCash;
 
 @interface CalculationRestClient : BaseRestClient {
-    NSMutableData               *wipData;		// The data being received from the rest service
-    DispenseCalculation			*wipResult;		// the work in progress result
     DispenseCash                *wipCash;
 }
 
-@property (nonatomic) DispenseCalculation *result;
-@property (nonatomic) id controller;
-
--(void) calculate:(id)cntrller calculation:(DispenseCalculation *)calc;
+-(void) calculate:(DispenseCalculation *)calc completionHandler:(void(^)()) completionHandler;
 
 @end

@@ -75,31 +75,29 @@
     calc.amountDue = self.amountDue;
     calc.noteReceived = note;
     
-    [rest calculate:self calculation:calc];
-}
-
-/**
- * Once the REST service is done this method willbe called with the results.
- */
-- (void) updateCalculation:(DispenseCalculation *)data {
-    NSMutableString *results = [[NSMutableString alloc] init];
-    for (DispenseCash *c in data.cashToDispense) {
-        if (c.denomination >= 1) {
-            [results appendFormat:@"%d x R %.0f\n", c.quantity, c.denomination];
-        } else {
-            [results appendFormat:@"%d x %.0fc\n", c.quantity, c.denomination * 100];
+    //When the service returns this block wil be calle to handle the return which will be in the calc variable
+    void (^completionHandler)() = ^() {
+        NSMutableString *results = [[NSMutableString alloc] init];
+        for (DispenseCash *c in calc.cashToDispense) {
+            if (c.denomination >= 1) {
+                [results appendFormat:@"%d x R %.0f\n", c.quantity, c.denomination];
+            } else {
+                [results appendFormat:@"%d x %.0fc\n", c.quantity, c.denomination * 100];
+            }
         }
-    }
+        
+        //If there is a message then something went wrong - make red
+        [self.lblResults setTextColor:[UIColor blackColor]];
+        if ([calc.message length] > 0) {
+            [self.lblResults setTextColor:[UIColor redColor]];
+            [results appendFormat:@"%@\n", calc.message];
+        }
+        
+        [results appendFormat:@"\nTotal: R%.2f", calc.noteReceived - calc.amountDue];
+        
+        [self.lblResults setText:results];
+    };
     
-    //If there is a message then something went wrong - make red
-    [self.lblResults setTextColor:[UIColor blackColor]];
-    if ([data.message length] > 0) {
-        [self.lblResults setTextColor:[UIColor redColor]];
-        [results appendFormat:@"%@\n", data.message];
-    }
-    
-    [results appendFormat:@"\nTotal: R%.2f", data.noteReceived - data.amountDue];
-    
-    [self.lblResults setText:results];
+    [rest calculate:calc completionHandler:completionHandler];
 }
 @end
